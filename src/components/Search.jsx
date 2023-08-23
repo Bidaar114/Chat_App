@@ -19,12 +19,12 @@ try{
     setUser(doc.data())
     });
   }catch(err){
-    setEr(true)
+    setEr(true) 
   }
   };
 
-  const handleKey = (e)=>{
-    e.code === "Enter" && handleSearch();
+  const handleKey = ()=>{
+    handleSearch();
   };
 
   const handleSelect = async () =>{
@@ -69,7 +69,7 @@ setUserName("");
   return (
     <div className='search'>
       <div className='searchForm'>
-        <input type='text'placeholder='Find a User'onKeyDown={handleKey}
+        <input type='text'placeholder='Find a User'onKeyUp={handleKey}
          onChange={(e)=>setUserName(e.target.value)} value={userName}/>
       </div>
       {err && <span>User not found!</span>}
